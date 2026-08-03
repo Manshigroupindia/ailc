@@ -28,13 +28,21 @@ export const ContactForm = () => {
         email: (data.email || '').trim(),
         subject: (data.subject || '').trim(),
         message: (data.message || '').trim(),
-        submittedAt: serverTimestamp(),
+        submittedAt: new Date().toISOString(),
         status: 'New',
         isStarred: false,
         notes: '',
       };
 
-      await addDoc(collection(db, 'contact_submissions'), submissionPayload);
+      try {
+        await addDoc(collection(db, 'contact_submissions'), {
+          ...submissionPayload,
+          submittedAt: serverTimestamp(),
+        });
+      } catch (firstErr) {
+        // Fallback for timestamp permission constraints
+        await addDoc(collection(db, 'contact_submissions'), submissionPayload);
+      }
 
       // Select random quote for Thank You modal
       setCurrentQuote(getRandomConstitutionQuote());
@@ -42,7 +50,7 @@ export const ContactForm = () => {
       reset();
     } catch (err) {
       console.error('Contact Form Firestore error:', err);
-      setErrorMessage(err.message || 'Something went wrong while sending your message. Please try again after a few moments.');
+      setErrorMessage('Permission or connection error. Please ensure Firebase console rules allow public writing to contact_submissions.');
       setShowErrorModal(true);
     }
   };

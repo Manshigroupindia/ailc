@@ -2,6 +2,20 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     
+    // Contact & RSVP Form Submissions: Unrestricted Public Read & Write
+    match /contact_submissions/{document=**} {
+      allow read, write: if true;
+    }
+
+    match /rsvp_submissions/{document=**} {
+      allow read, write: if true;
+    }
+
+    // Analytics Collection (Read & Write permitted for public analytics tracking)
+    match /analytics/{document=**} {
+      allow read, write: if true;
+    }
+
     // Helper function to check if user is an authenticated Firebase user
     function isAuthenticated() {
       return request.auth != null;
@@ -46,20 +60,6 @@ service cloud.firestore {
     match /pages/{document=**} {
       allow read: if true;
       allow write: if isAuthenticated();
-    }
-
-    // Contact & RSVP Form Submissions: Public Read & Write permitted for public form entries
-    match /contact_submissions/{docId} {
-      allow read, write: if true;
-    }
-
-    match /rsvp_submissions/{docId} {
-      allow read, write: if true;
-    }
-
-    // Analytics Collection (Read & Write permitted for public analytics tracking)
-    match /analytics/{document=**} {
-      allow read, write: if true;
     }
 
     // Default catch-all for any other collections: Public Read allowed, Write restricted to Auth users

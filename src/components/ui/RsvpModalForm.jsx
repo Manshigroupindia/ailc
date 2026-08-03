@@ -31,20 +31,27 @@ export const RsvpModalForm = ({ eventTitle, eventDate, eventVenue, onCloseModal 
         eventTitle: eventTitle || 'AILC Event',
         eventDate: eventDate || '',
         eventVenue: eventVenue || '',
-        submittedAt: serverTimestamp(),
+        submittedAt: new Date().toISOString(),
         status: 'New',
         isStarred: false,
         notes: '',
       };
 
-      await addDoc(collection(db, 'rsvp_submissions'), submissionPayload);
+      try {
+        await addDoc(collection(db, 'rsvp_submissions'), {
+          ...submissionPayload,
+          submittedAt: serverTimestamp(),
+        });
+      } catch (firstErr) {
+        await addDoc(collection(db, 'rsvp_submissions'), submissionPayload);
+      }
 
       setCurrentQuote(getRandomConstitutionQuote());
       setShowSuccessModal(true);
       reset();
     } catch (err) {
       console.error('RSVP Form Firestore error:', err);
-      setErrorMessage(err.message || 'Something went wrong while submitting your RSVP. Please try again after a few moments.');
+      setErrorMessage('Permission or connection error. Please ensure Firebase console rules allow public writing to rsvp_submissions.');
       setShowErrorModal(true);
     }
   };
