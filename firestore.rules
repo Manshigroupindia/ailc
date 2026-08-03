@@ -1,0 +1,62 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is an authenticated Firebase user
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Public content: Read access for everyone, Write access restricted to authenticated Admins only
+    match /settings/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /media/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /people/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /patrons/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /executive/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /activityReports/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /conference/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /pages/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Analytics Collection (Read & Write permitted for public analytics tracking)
+    match /analytics/{document=**} {
+      allow read, write: if true;
+    }
+
+    // Default catch-all for any other collections: Public Read allowed, Write restricted to Auth users
+    match /{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+  }
+}

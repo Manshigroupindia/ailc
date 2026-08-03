@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>All India Lawyers Council | AILC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#ffdc7e",
+                    "surface-container-highest": "#e1e2e4",
+                    "primary": "#000d25",
+                    "secondary": "#745b04",
+                    "on-primary-fixed": "#021b3d",
+                    "on-primary-container": "#768bb3",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#2e3132",
+                    "on-secondary-container": "#78600a",
+                    "outline": "#74777f",
+                    "surface-bright": "#f8f9fb",
+                    "inverse-on-surface": "#f0f1f3",
+                    "on-secondary-fixed": "#241a00",
+                    "on-surface": "#191c1e",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c4c6cf",
+                    "surface-container-high": "#e7e8ea",
+                    "tertiary-fixed-dim": "#b6c4ff",
+                    "on-tertiary-container": "#6e87db",
+                    "on-primary-fixed-variant": "#32476b",
+                    "primary-fixed-dim": "#b2c7f2",
+                    "on-background": "#191c1e",
+                    "surface-variant": "#e1e2e4",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#584400",
+                    "primary-container": "#0b2345",
+                    "on-tertiary-fixed-variant": "#264191",
+                    "on-secondary": "#ffffff",
+                    "background": "#f8f9fb",
+                    "tertiary-container": "#001d60",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#d9dadc",
+                    "secondary-fixed": "#ffe08d",
+                    "on-tertiary-fixed": "#00164e",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f8f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-fixed-dim": "#e4c368",
+                    "tertiary": "#000a30",
+                    "on-surface-variant": "#44474e",
+                    "primary-fixed": "#d7e3ff",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#b2c7f2",
+                    "surface-container": "#edeef0",
+                    "surface-tint": "#4a5f84",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#dce1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "xs": "4px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "margin-desktop": "64px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "button": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "button": ["15px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "display-lg": ["60px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .shadow-premium {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 240px;
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Announcement Bar -->
+<div class="bg-primary text-on-primary py-2 overflow-hidden border-b border-primary-container">
+<div class="max-w-container-max mx-auto px-margin-desktop whitespace-nowrap">
+<div class="flex items-center gap-4 animate-[marquee_20s_linear_infinite]">
+<span class="font-label-lg uppercase tracking-wider text-secondary-fixed">Notice:</span>
+<span class="font-body-sm opacity-90">National Law Conference 2024 registration is now open. | High Court Advocates enrollment window extended. | AILC Membership Drive active for the 2024-25 term.</span>
+<span class="font-label-lg uppercase tracking-wider text-secondary-fixed ml-12">Update:</span>
+<span class="font-body-sm opacity-90">New Legal Aid centers inaugurated in 12 rural districts across India.</span>
+</div>
+</div>
+</div>
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-primary/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm border-b border-white/10">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-on-primary">AILC</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-white transition-colors font-label-lg text-label-lg" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-white transition-colors font-label-lg text-label-lg" href="#">Leadership</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-white transition-colors font-label-lg text-label-lg" href="#">Membership</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-white transition-colors font-label-lg text-label-lg" href="#">Resources</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-white transition-colors font-label-lg text-label-lg" href="#">Events</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary">search</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-button text-button hover:opacity-80 transition-all scale-95 active:scale-90">Become a Member</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="An majestic architectural photograph of the Supreme Court of India with its iconic central dome and white pillars, captured during the golden hour with soft, warm sunlight illuminating the facade. The shot is wide-angle, emphasizing the scale and grandeur of the legal institution under a clear sky. The overall aesthetic is professional, institutional, and evokes a sense of authority and historical importance with a clean light-mode finish." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRoI4LEDqZn6Ud6wTzGozFmMDlQtcNX6zQawdsexoIdmzrGlCATfjThrPZZo_RsNwtnRFIuhGiMYq-qLcNdEnHu2uexNZQdbSPnHAvx8RDtwwTCiO_1r4ASJImNr2IQf9r-lV9Nfyyun5f76IMUFvP6xaAQPyJ6brAGc08_QReIYahB8xGhkfd144MipWjX0Wary_qVki_pPGXvVANiQ-9n---EN3E7RvffrcGuxlc2WvxGkFF0apC')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="text-white">
+<span class="inline-block px-4 py-1.5 bg-secondary-fixed/20 border border-secondary-fixed/30 rounded-full font-label-md text-secondary-fixed mb-6 tracking-widest uppercase">Est. 1994</span>
+<h1 class="font-display-lg text-display-lg mb-8 leading-tight">ALL INDIA LAWYERS COUNCIL</h1>
+<p class="font-body-lg text-body-lg mb-12 text-white/80 max-w-xl">A National Organization of Practising Lawyers dedicated to Justice, Constitutional Values, Legal Awareness and Professional Excellence.</p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-lg font-button text-button shadow-lg hover:scale-105 transition-transform">Become a Member</button>
+<button class="border-2 border-white text-white px-8 py-4 rounded-lg font-button text-button hover:bg-white hover:text-primary transition-all">Learn More</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 lg:gap-6">
+<div class="glass-effect p-8 rounded-xl border-white/20 transform hover:-translate-y-2 transition-transform shadow-premium">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4">account_balance</span>
+<h3 class="font-headline-sm text-headline-sm text-white mb-1">1994</h3>
+<p class="font-label-md text-white/60">Established</p>
+</div>
+<div class="glass-effect p-8 rounded-xl border-white/20 transform hover:-translate-y-2 transition-transform shadow-premium">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4">map</span>
+<h3 class="font-headline-sm text-headline-sm text-white mb-1">28+</h3>
+<p class="font-label-md text-white/60">States Covered</p>
+</div>
+<div class="glass-effect p-8 rounded-xl border-white/20 transform hover:-translate-y-2 transition-transform shadow-premium">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4">groups</span>
+<h3 class="font-headline-sm text-headline-sm text-white mb-1">500+</h3>
+<p class="font-label-md text-white/60">Office Bearers</p>
+</div>
+<div class="glass-effect p-8 rounded-xl border-white/20 transform hover:-translate-y-2 transition-transform shadow-premium">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl mb-4">gavel</span>
+<h3 class="font-headline-sm text-headline-sm text-white mb-1">1200+</h3>
+<p class="font-label-md text-white/60">Legal Programs</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-xl bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative z-10">
+<img class="w-full h-full object-cover" data-alt="A sophisticated close-up of a bronze legal scale resting on an ancient, leather-bound law book. The background features blurred, high bookshelves of a classic law library, creating a deep sense of heritage and intellectual rigor. Soft daylight spills onto the scene, creating elegant highlights and deep shadows that emphasize the textures of bronze and leather. Minimalist, premium, and institutional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEQpCUTvK08aCg-Rnpwqw8tRAtVh7gLbODLM3LgDRCaQ_UX_MyrTnlkjLXaDq1HxRpSogUi5XK6a7OqwecqmwGJKqu6joA88vo419ORo49t1822GKYpUt1glA5oVbJlShAmJU7nHJKRc35ZPvrvmmTmGAIsVj2sipXwrzZ634nsBavtuQYvcYPusLWRR8eBaORV4iJJZTNYt5yWWG_TSUnKa8NcYK3cDyoYWyso7IDu5YvAjewvgX5"/>
+</div>
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary-fixed/10 -z-10 rounded-full blur-3xl"></div>
+</div>
+<div>
+<span class="font-label-lg text-secondary tracking-widest uppercase mb-4 block">Our Institutional Mission</span>
+<h2 class="font-headline-lg text-headline-lg mb-8 text-primary">WHO WE ARE</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg">
+<p>The All India Lawyers Council (AILC) stands as a beacon of legal integrity and constitutional advocacy. Founded with the vision to unite practitioners across the nation, we foster a community of excellence that transcends state boundaries.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-3">Our Mission</h4>
+<p class="text-body-md">To empower legal professionals through continuous education and to bridge the gap between justice and the common citizen.</p>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-3">Our Vision</h4>
+<p class="text-body-md">A democratic society where legal awareness is universal and justice is accessible, affordable, and swift for every individual.</p>
+</div>
+</div>
+</div>
+<button class="mt-12 group flex items-center gap-3 font-button text-button text-primary">
+                    READ FULL CHARTER
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Core Values -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Core Values</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Foundational principles that guide every action and decision within the All India Lawyers Council.</p>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Value Card 1 -->
+<div class="bg-white p-10 rounded-xl shadow-premium hover:shadow-xl transition-all border border-transparent hover:border-secondary-fixed/30">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">balance</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Justice</h3>
+<p class="text-on-surface-variant text-body-md">Upholding the supreme principles of fairness and equity in every legal proceeding and societal interaction.</p>
+</div>
+<!-- Value Card 2 -->
+<div class="bg-white p-10 rounded-xl shadow-premium hover:shadow-xl transition-all border border-transparent hover:border-secondary-fixed/30">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Integrity</h3>
+<p class="text-on-surface-variant text-body-md">Maintaining the highest standards of professional ethics and transparent conduct within the legal fraternity.</p>
+</div>
+<!-- Value Card 3 -->
+<div class="bg-white p-10 rounded-xl shadow-premium hover:shadow-xl transition-all border border-transparent hover:border-secondary-fixed/30">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">diversity_3</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Equality</h3>
+<p class="text-on-surface-variant text-body-md">Ensuring impartial treatment for all members and citizens, regardless of background, status, or identity.</p>
+</div>
+<!-- Value Card 4 -->
+<div class="bg-white p-10 rounded-xl shadow-premium hover:shadow-xl transition-all border border-transparent hover:border-secondary-fixed/30">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">history_edu</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Constitution</h3>
+<p class="text-on-surface-variant text-body-md">Fostering deep respect and adherence to the Constitutional framework of the Republic of India.</p>
+</div>
+<!-- Value Card 5 -->
+<div class="bg-white p-10 rounded-xl shadow-premium hover:shadow-xl transition-all border border-transparent hover:border-secondary-fixed/30">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">menu_book</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Legal Awareness</h3>
+<p class="text-on-surface-variant text-body-md">Actively educating the public on their rights and duties through sustained community outreach programs.</p>
+</div>
+<!-- Value Card 6 -->
+<div class="bg-white p-10 rounded-xl shadow-premium hover:shadow-xl transition-all border border-transparent hover:border-secondary-fixed/30">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">volunteer_activism</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Social Responsibility</h3>
+<p class="text-on-surface-variant text-body-md">Contributing to the betterment of society through pro-bono services and legal aid for the marginalized.</p>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="py-xl bg-white overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div>
+<span class="font-label-lg text-secondary tracking-widest uppercase mb-4 block">National Leadership</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Executive Board</h2>
+</div>
+<button class="font-button text-button text-primary border-b-2 border-primary pb-1">VIEW ALL LEADERSHIP</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<!-- Chairman Card -->
+<div class="group relative bg-surface-container rounded-2xl overflow-hidden flex flex-col lg:flex-row shadow-premium">
+<div class="lg:w-2/5 aspect-square lg:aspect-auto overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A formal executive portrait of a senior Indian lawyer in his late 50s, wearing a high-quality black advocate's robe and white neckband. He has a distinguished, authoritative presence, smiling subtly against a warm, blurred studio background. The lighting is professional, with soft key light highlighting his experience and wisdom. Professional legal headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwoMM6tzrkkqrLFQdGBljeR1pFdEeJsPb0C_AzryKKS_RJSfzKDpHEQyuxXEoPgb4zVszckp-6nAPv8J6yge4QkXCwkH8u6_DBlPaQFwmJNgXJ7JC7ITVEPAic3MSBGrxZBwvkBlZFFa6AEcGxCIwxVOIT_ONbC7WbkHykycwPkHFHT8i6HLsNn3Rp5AXw87m9sM_NOVtR7ys0q5VmwMwragV9qp3D8SaFGf3aQy1MphukF3OYQnws"/>
+</div>
+<div class="lg:w-3/5 p-12 flex flex-col justify-center">
+<span class="text-secondary font-label-lg tracking-widest uppercase mb-2">Chairman</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Adv. R. K. Shrivastava</h3>
+<p class="text-on-surface-variant text-body-md mb-8">Senior Advocate with over 35 years of practice in the Supreme Court of India, pioneering legal reforms and advocate welfare programs nationwide.</p>
+<button class="w-fit bg-primary text-on-primary px-6 py-3 rounded-lg font-button text-button hover:bg-secondary transition-colors">VIEW PROFILE</button>
+</div>
+<div class="absolute top-0 right-0 p-8">
+<div class="w-16 h-1 bg-secondary-fixed"></div>
+</div>
+</div>
+<!-- Vice Chairman Card -->
+<div class="group relative bg-surface-container rounded-2xl overflow-hidden flex flex-col lg:flex-row shadow-premium">
+<div class="lg:w-2/5 aspect-square lg:aspect-auto overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A professional studio portrait of a woman in her late 40s, a senior legal professional, wearing formal black legal attire. She exudes confidence, intelligence, and poise. The setting is clean and high-end, with a soft grey gradient background. The aesthetic is contemporary, highlighting professional excellence and diversity in legal leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjRpy7UBrxiRt6kZpiISOvR9nriRuEQVa2VQ7IELCo1P2Hx2Npd-Q6njq7wbPE60g0HTpb7jvZzikLyzYK5w5LijYIJyzesFhP7OU5tSLfCYNft0CKSexxvvNVUO1s5OmzYJAnVGID0iWYE-Mwpxq_N0YqsMv0IyPyI3Z8c9Nv7eaOw4c93e0NMWXjNzLrf8cs2IkAnRM4YQA0a5vB9jtSpq9a0-Oxo15keQUubyBk11Z1gCUNb-0i"/>
+</div>
+<div class="lg:w-3/5 p-12 flex flex-col justify-center">
+<span class="text-secondary font-label-lg tracking-widest uppercase mb-2">Vice-Chairman</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Adv. Meenakshi Singh</h3>
+<p class="text-on-surface-variant text-body-md mb-8">Specialist in Constitutional Law and Women's Rights advocacy, instrumental in organizing international legal symposiums.</p>
+<button class="w-fit bg-primary text-on-primary px-6 py-3 rounded-lg font-button text-button hover:bg-secondary transition-colors">VIEW PROFILE</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- National Office Bearers (Search & List) -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">National Office Bearers</h2>
+<!-- Filter Bar -->
+<div class="bg-white p-4 rounded-xl shadow-premium flex flex-wrap gap-4 items-center justify-center max-w-4xl mx-auto">
+<div class="flex-1 min-w-[200px] relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none" placeholder="Search by name..." type="text"/>
+</div>
+<select class="px-6 py-3 border border-outline-variant rounded-lg outline-none focus:ring-2 focus:ring-primary font-label-lg">
+<option>All States</option>
+<option>Delhi</option>
+<option>Maharashtra</option>
+<option>Karnataka</option>
+<option>Uttar Pradesh</option>
+</select>
+<select class="px-6 py-3 border border-outline-variant rounded-lg outline-none focus:ring-2 focus:ring-primary font-label-lg">
+<option>All Designations</option>
+<option>General Secretary</option>
+<option>Treasurer</option>
+<option>Executive Member</option>
+</select>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-button">FILTER</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Profile Cards (Repeat 4 times) -->
+<div class="bg-white rounded-xl shadow-premium p-6 hover:translate-y-[-8px] transition-transform text-center group border border-transparent hover:border-secondary-fixed/20">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-surface-container-high group-hover:border-secondary-fixed transition-colors">
+<img class="w-full h-full object-cover" data-alt="Corporate headshot of a middle-aged male lawyer in professional attire, white background, soft lighting, professional and approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9naYmvgtW3BzWbizHOovJAB8dAZTAQ4NKT3wx-UjcqlpJbUSAqOZF9JVLhQVMHX6S27o3zjaQL4UGGR1IZ009KGqoqR-Gm9TTypOqgFNdxFDEhwLMBuZyFOZWk8xNprzIY59DyTUoSL5oURJ8SqUlvdefuTEc997SFj0v2Btwr_lyzIqurxGoKU_HMxhIATKwITCIXyWDe7M6f1MfvxPV3LsTpgHQjoYkUO3B-8pR940I5GkvhKpo"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Adv. Anil Verma</h4>
+<p class="text-secondary font-label-md uppercase tracking-wide mb-4">General Secretary</p>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant font-label-md mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        New Delhi
+                    </div>
+<button class="w-full py-2.5 rounded-lg border border-primary text-primary font-button hover:bg-primary hover:text-white transition-colors">KNOW MORE</button>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl shadow-premium p-6 hover:translate-y-[-8px] transition-transform text-center group border border-transparent hover:border-secondary-fixed/20">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-surface-container-high group-hover:border-secondary-fixed transition-colors">
+<img class="w-full h-full object-cover" data-alt="Corporate headshot of an Indian woman lawyer in formal saree and coat, warm skin tones, professional office background, high key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW78sZONjoU6Fpie3QGDLkiakEPm1VhaXIGUnR0RzTh4ji1oJsvoTk4K1mj9RzTkDmKBEmM1kr3rZy0sBsC4WwcdKB-d11WvoVqRQGKi54cWnT4NsFt74MBIksmm0WybYtQXP6PTK2enAVKQj0_MdCdW_ltvDrHW1tj_QlIAiSm0i9A2D-7C_1EQbxSAB5Ez2PrBwwi6ZrxLDCe0o36eAnDIttoF_vAq9P4Aq_LwljLi5r1j09z_7L"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Adv. Priya Nair</h4>
+<p class="text-secondary font-label-md uppercase tracking-wide mb-4">National Treasurer</p>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant font-label-md mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        Kerala
+                    </div>
+<button class="w-full py-2.5 rounded-lg border border-primary text-primary font-button hover:bg-primary hover:text-white transition-colors">KNOW MORE</button>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-xl shadow-premium p-6 hover:translate-y-[-8px] transition-transform text-center group border border-transparent hover:border-secondary-fixed/20">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-surface-container-high group-hover:border-secondary-fixed transition-colors">
+<img class="w-full h-full object-cover" data-alt="Executive headshot of an elderly experienced lawyer, white hair, black robe, legal library backdrop, authoritative look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOG9TorbmbTeyAvrEaBLHI9LtX4wOoYOff4e7AIYNkYkjmUlLbYETLDD1sqkuvXQbyeGSa8rtBGeptEXvdBXW-HDvnRckXhuW-FpxKZB-LmwCMBC4lN-SVGFHqFu2I9qEel6nLnp9lrD_v5Rink6o43R9OsEgi7wdlbvk5Z_9mRNaJMJ6CXV0QMyUYztKA8TSAywtEkuRPD1h_FtxKyOeRnUUToKtqPM4zF8W1feV9dcRTuj9MufMG"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Adv. Suresh Patil</h4>
+<p class="text-secondary font-label-md uppercase tracking-wide mb-4">Joint Secretary</p>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant font-label-md mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        Maharashtra
+                    </div>
+<button class="w-full py-2.5 rounded-lg border border-primary text-primary font-button hover:bg-primary hover:text-white transition-colors">KNOW MORE</button>
+</div>
+<!-- Card 4 -->
+<div class="bg-white rounded-xl shadow-premium p-6 hover:translate-y-[-8px] transition-transform text-center group border border-transparent hover:border-secondary-fixed/20">
+<div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-surface-container-high group-hover:border-secondary-fixed transition-colors">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male professional lawyer, wearing glasses and a formal black suit, soft daylight, blurred high-end interior background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmnbFfZersRflVIFc9SsP7BhMiI6bJSsFchL9ADPaqKYXBlIh89U05QBGBj6MGUH9V-m486P6HIPTbPqffkLYn9vS9VEt6-s8bXRZKmlNICaHZhx7lucXaq0GV56sxetX8saxT49KuEjHc09eVcpI3LwL7uJ8O6XZW1lx6e7ADdR9uonN94L538-qLipoyzMY80Nnqbdi_26r5qr46bDCmJSBt4mIEX0f-27CBv_N1Dy0Lf1mGTbCr"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-1">Adv. Rahul Gupta</h4>
+<p class="text-secondary font-label-md uppercase tracking-wide mb-4">Executive Member</p>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant font-label-md mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        Uttar Pradesh
+                    </div>
+<button class="w-full py-2.5 rounded-lg border border-primary text-primary font-button hover:bg-primary hover:text-white transition-colors">KNOW MORE</button>
+</div>
+</div>
+</div>
+</section>
+<!-- State Committees (Interactive Map Placeholder) -->
+<section class="py-xl bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8">State Level Governance</h2>
+<p class="text-body-lg opacity-80 mb-12">The AILC operates through robust State Committees that ensure localized legal support and implementation of national council initiatives. Explore our regional presence across India.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary-fixed">flag</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm">28+ State Chapters</h4>
+<p class="text-body-md opacity-70">Dedicated councils in every major state providing local assistance.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary-fixed">group_work</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm">District Committees</h4>
+<p class="text-body-md opacity-70">Over 500 active district bodies bridging the gap to grassroots advocacy.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative bg-primary-container rounded-2xl overflow-hidden shadow-2xl p-8 border border-white/10 min-h-[500px] flex items-center justify-center">
+<div class="w-full h-full opacity-40 absolute inset-0 pointer-events-none" data-location="India" style=""></div>
+<div class="relative z-10 text-center p-12 glass-effect border border-white/5 rounded-xl max-w-md">
+<span class="material-symbols-outlined text-secondary-fixed text-6xl mb-6">public</span>
+<h3 class="font-headline-md text-headline-md mb-4 text-white">Interactive Network Map</h3>
+<p class="font-body-md opacity-80 mb-8">Click on a state to view local committee members, regional news, and upcoming events in that territory.</p>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-lg font-button hover:opacity-90 transition-opacity">EXPLORE MAP</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Membership CTA -->
+<section class="py-xl bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="bg-surface-container rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-premium border border-surface-variant">
+<div class="lg:w-1/2 p-12 lg:p-20">
+<span class="font-label-lg text-secondary tracking-widest uppercase mb-4 block">Join the Fraternity</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">MEMBERSHIP PRIVILEGES</h2>
+<ul class="space-y-6 mb-12">
+<li class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+                            Access to exclusive Legal Seminars and Training
+                        </li>
+<li class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+                            National Accreditation and Networking
+                        </li>
+<li class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+                            Advocate Welfare and Insurance Benefits
+                        </li>
+<li class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+                            Digital Resource Library &amp; Journals
+                        </li>
+</ul>
+<div class="p-6 bg-white rounded-xl border-l-4 border-secondary shadow-sm">
+<p class="font-label-md text-on-surface-variant italic">"Being a member of AILC has significantly elevated my professional standing and provided a platform to serve the society better."</p>
+<p class="font-button text-sm mt-2 text-primary">— Adv. Sameer Deshmukh</p>
+</div>
+</div>
+<div class="lg:w-1/2 bg-primary p-12 lg:p-20 flex flex-col justify-center items-center text-center text-white relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+
+</div>
+<div class="relative z-10 w-full max-w-sm p-10 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20">
+<h3 class="font-headline-md text-headline-md mb-2">APPLY NOW</h3>
+<p class="font-body-sm opacity-80 mb-8">Eligible for all practicing lawyers across India. Verification process takes 7-10 working days.</p>
+<div class="space-y-4 mb-8">
+<input class="w-full bg-white/5 border border-white/20 rounded-lg py-3 px-4 outline-none focus:border-secondary-fixed transition-colors text-white placeholder:text-white/40" placeholder="Full Name" type="text"/>
+<input class="w-full bg-white/5 border border-white/20 rounded-lg py-3 px-4 outline-none focus:border-secondary-fixed transition-colors text-white placeholder:text-white/40" placeholder="Email Address" type="email"/>
+</div>
+<button class="w-full bg-secondary-fixed text-on-secondary-fixed py-4 rounded-lg font-button text-button shadow-xl hover:scale-[1.02] active:scale-95 transition-all">START APPLICATION</button>
+<p class="mt-4 font-label-md opacity-60">Application Fee: ₹1500 (Annual)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Legal Activities Grid -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Legal Activities</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Engaging our members and the public through diverse professional and social initiatives.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Activity 1 -->
+<div class="group bg-white rounded-xl shadow-premium overflow-hidden border border-transparent hover:border-secondary-fixed/30 transition-all">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A brightly lit seminar hall with legal professionals in formal attire attending a keynote speech. Professional photography, wide shot, warm ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbzu1tQE9nQ1973oFgnjaajWmnumxL1zWNLWfGPM9GpMiYFohwZ52tSeAqNbc5RvN0NeiPTPNnooMLJQ0zafg8cwXgjg0PJmfrZPAMAqeoh5qeUZlsxganuzxX4JFvkQVkyeK1799Dz-ZYbwH1WMQA5bTLNF4H2NoDOhwWN5VL81KBZCQCgIj5Z0kgBEtiIq9LENY8bO3lyAoOHfMHNz0wcSNZL17xT_GBTueD2r0QF5drwCI_M33G"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-headline-sm mb-3">Seminars</h4>
+<p class="text-body-sm text-on-surface-variant mb-6">Continuous legal education programs led by industry stalwarts.</p>
+<a class="text-primary font-button text-sm border-b border-primary" href="#">VIEW SCHEDULE</a>
+</div>
+</div>
+<!-- Activity 2 -->
+<div class="group bg-white rounded-xl shadow-premium overflow-hidden border border-transparent hover:border-secondary-fixed/30 transition-all">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Outdoor legal aid camp in a rural village, lawyers interacting with locals under a temporary tent structure, sunny day, hopeful atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADOP8hDxV0_UD3y4NbQ6oNx0lM-2TddDmJU58d05OTQkfsFuTXwIFZATpV690WWwgyPqJKde6sNSv0_jGtr6UME1PtNs8alhHUuJexWvvlW5HeE81LfjrI_wYzbEt7Qyz66zmqR30YrMwn1hg-jx3vYxebR-njnP9n93aO1uzXeEqumQHpXmzTDTR4cAoKz9YRURM-c3qNZ_3vPoYxHh_T4ggxACcOo24qna0lcW7TlyzSaPXsFUFM"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-headline-sm mb-3">Legal Aid Camps</h4>
+<p class="text-body-sm text-on-surface-variant mb-6">Reaching the unreached with free legal counsel in remote areas.</p>
+<a class="text-primary font-button text-sm border-b border-primary" href="#">READ REPORTS</a>
+</div>
+</div>
+<!-- Activity 3 -->
+<div class="group bg-white rounded-xl shadow-premium overflow-hidden border border-transparent hover:border-secondary-fixed/30 transition-all">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Large-scale national law conference, hundreds of advocates gathered in a grand auditorium, blue and gold stage decor, high prestige feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0iZaxKh020gNifAjeJLnWW0P_q4zeATtub1lFrxSYaWdDtyqWvnT3of6dtobA_KKUTrDu5Lh5zTlRUVynwO_3G-ozKWIkpQvV6w-WAB6g27pDabczLkL9TScj3UL9FuczS9j5XIiCEXEv2N6bnFX5HtNZ5vbgQJ-RiPW3fLU5E2p3qwhVKwZFVfzto6Rv4nfem-tLKQ-PnCnnOLrSdl0Fce6wfr8oVV7FX1_tClwh80scCsC8seqw"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-headline-sm mb-3">Conferences</h4>
+<p class="text-body-sm text-on-surface-variant mb-6">Grand annual summits for policy discussion and networking.</p>
+<a class="text-primary font-button text-sm border-b border-primary" href="#">UPCOMING</a>
+</div>
+</div>
+<!-- Activity 4 -->
+<div class="group bg-white rounded-xl shadow-premium overflow-hidden border border-transparent hover:border-secondary-fixed/30 transition-all">
+<div class="h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern workshop setting with laptops and legal books, young lawyers participating in a training session, collaborative professional environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGobxYe8al5QWJhEWr2qVtLtXVFrbo-nAuGAbFgcraUpeFO2mb6FQdfPitbkFMTvQjc7QWZ4bfTrJ2FQJf7pgj6J1OcXTRydBqLDsOJMxzmPU0JdylGqw6veedjAVr2jJskhcXXRepUJ1aCSzimoghJK0G_5HupBh2mWh2yT1Y3qaBGJZl2YShPk8RoReUXkDWrBIO6nkTHGtJ9mxnBwAA4ta_ER9YbLJA17UpNbzt23YIlza4YO1f"/>
+</div>
+<div class="p-8">
+<h4 class="font-headline-sm text-headline-sm mb-3">Training</h4>
+<p class="text-body-sm text-on-surface-variant mb-6">Focused workshops on digital litigation and emerging legal tech.</p>
+<a class="text-primary font-button text-sm border-b border-primary" href="#">REGISTER</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News & Publications -->
+<section class="py-xl bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- News Column -->
+<div class="lg:col-span-2">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-md text-headline-md text-primary">Latest News</h2>
+<a class="font-button text-sm text-secondary hover:underline" href="#">BROWSE ALL</a>
+</div>
+<div class="space-y-8">
+<!-- Blog Card 1 -->
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="w-full md:w-64 h-48 rounded-xl overflow-hidden flex-shrink-0 shadow-premium">
+<img class="w-full h-full object-cover" data-alt="Professional office workspace with gavel and legal documents, warm lighting, high quality stock photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFNj8R9rjBSolo8Hu0o-9tPrJWVhQ6VieqKX1qXl0Yzp69m0KGUyAHb4NGwN6yDe5ybpBmx_CyXssmbocfaZtwnRYMtXG8qz5E4TS7Ldl0dmgrw_pi6y9TSqJng_DMdhUXldvwhRq85ibndebYEi68yMPBpwerlfYr0XUiuqWzcPv3h10sLsjZWaMUw_6CwRShnoDyyLaEm3bceFwz15TNwXBCBwgyOUOAEOJySujPgsYhtPWumU8_"/>
+</div>
+<div class="flex-1">
+<span class="font-label-md text-secondary uppercase mb-2 block">Council News</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 leading-tight hover:text-secondary transition-colors cursor-pointer">Council Submits Key Recommendations on New Data Protection Bill</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mb-4">The executive committee met with parliamentary members to discuss the implications for legal practitioners and client confidentiality...</p>
+<span class="font-label-md opacity-60">May 12, 2024</span>
+</div>
+</div>
+<div class="h-px bg-surface-variant w-full"></div>
+<!-- Blog Card 2 -->
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="w-full md:w-64 h-48 rounded-xl overflow-hidden flex-shrink-0 shadow-premium">
+<img class="w-full h-full object-cover" data-alt="A group of smiling lawyers standing in front of a high court building, sunny day, victory and collaboration mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs8Tmvr7uQcoDO48oOAbG30sVvd3G4R_RxzNALGx3LmfT63fLuxgBY5y3sMcIQ35ZlBKPnOMB9EvIcE7IalBD3YpBs91fih6VnkgxvldXmVAO4Gam6GCJoa9vuNVwb3PfEEze5Ij9ccvQQ_17z26NWH9WhfPd9vCQ-D-_KIAB2dmXSgh7VME-sRE58yGdMbcXscMLY9Ds25gNQDEEKjBNirnws7BNZsHuTYMSI3o0--NTRSsXx1qyR"/>
+</div>
+<div class="flex-1">
+<span class="font-label-md text-secondary uppercase mb-2 block">Event Update</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 leading-tight hover:text-secondary transition-colors cursor-pointer">Regional Chapter Inaugurated in North Eastern States</h3>
+<p class="text-on-surface-variant text-body-md line-clamp-2 mb-4">Strengthening our footprint in the Northeast, the AILC has officially launched its Meghalaya and Assam state committees...</p>
+<span class="font-label-md opacity-60">April 28, 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Publications Column -->
+<div class="bg-surface-container rounded-2xl p-10 border border-surface-variant shadow-premium">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Publications</h2>
+<div class="space-y-6">
+<!-- Publication Card 1 -->
+<div class="p-6 bg-white rounded-xl shadow-sm border-l-4 border-primary hover:translate-x-2 transition-transform">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl">picture_as_pdf</span>
+<div>
+<h4 class="font-label-lg mb-1 leading-snug">AILC Quarterly Journal - Q1 2024</h4>
+<p class="text-xs opacity-60 mb-3">Size: 4.2 MB • PDF</p>
+<button class="flex items-center gap-2 text-primary font-button text-xs group">
+                                    DOWNLOAD NOW
+                                    <span class="material-symbols-outlined text-sm group-hover:translate-y-1 transition-transform">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Publication Card 2 -->
+<div class="p-6 bg-white rounded-xl shadow-sm border-l-4 border-primary hover:translate-x-2 transition-transform">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl">picture_as_pdf</span>
+<div>
+<h4 class="font-label-lg mb-1 leading-snug">New Membership Handbook 2024-25</h4>
+<p class="text-xs opacity-60 mb-3">Size: 1.8 MB • PDF</p>
+<button class="flex items-center gap-2 text-primary font-button text-xs group">
+                                    DOWNLOAD NOW
+                                    <span class="material-symbols-outlined text-sm group-hover:translate-y-1 transition-transform">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Publication Card 3 -->
+<div class="p-6 bg-white rounded-xl shadow-sm border-l-4 border-primary hover:translate-x-2 transition-transform">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl">picture_as_pdf</span>
+<div>
+<h4 class="font-label-lg mb-1 leading-snug">Annual Report on Legal Aid Activities</h4>
+<p class="text-xs opacity-60 mb-3">Size: 3.5 MB • PDF</p>
+<button class="flex items-center gap-2 text-primary font-button text-xs group">
+                                    DOWNLOAD NOW
+                                    <span class="material-symbols-outlined text-sm group-hover:translate-y-1 transition-transform">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Events Timeline -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<span class="font-label-lg text-secondary tracking-widest uppercase mb-4 block">Save the Date</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Upcoming Events</h2>
+</div>
+<div class="max-w-4xl mx-auto relative px-margin-mobile">
+<!-- Timeline Line -->
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2"></div>
+<div class="space-y-16">
+<!-- Event 1 -->
+<div class="relative flex flex-col md:flex-row md:items-center">
+<div class="md:w-1/2 pr-0 md:pr-16 text-left md:text-right mb-4 md:mb-0">
+<div class="glass-effect p-6 rounded-xl shadow-premium inline-block border-l-4 md:border-l-0 md:border-r-4 border-secondary">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">National Law Seminar</h4>
+<p class="text-on-surface-variant text-body-sm">Vigyan Bhawan, New Delhi • 10:00 AM</p>
+<button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-xs font-button">RSVP NOW</button>
+</div>
+</div>
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-secondary z-10"></div>
+<div class="md:w-1/2 pl-16">
+<span class="font-display-lg text-4xl text-primary/30 font-bold">15 JUN</span>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex flex-col md:flex-row-reverse md:items-center">
+<div class="md:w-1/2 pl-0 md:pl-16 text-left mb-4 md:mb-0">
+<div class="glass-effect p-6 rounded-xl shadow-premium inline-block border-l-4 border-secondary">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">Constitutional Rights Workshop</h4>
+<p class="text-on-surface-variant text-body-sm">Bombay High Court Aud. • 11:30 AM</p>
+<button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-xs font-button">RSVP NOW</button>
+</div>
+</div>
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-secondary z-10"></div>
+<div class="md:w-1/2 pr-16 text-left md:text-right">
+<span class="font-display-lg text-4xl text-primary/30 font-bold">22 JUL</span>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex flex-col md:flex-row md:items-center">
+<div class="md:w-1/2 pr-0 md:md:pr-16 text-left md:text-right mb-4 md:mb-0">
+<div class="glass-effect p-6 rounded-xl shadow-premium inline-block border-l-4 md:border-l-0 md:border-r-4 border-secondary">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">All India Advocates Meet</h4>
+<p class="text-on-surface-variant text-body-sm">ITC Grand Chola, Chennai • 09:00 AM</p>
+<button class="mt-4 bg-primary text-white px-4 py-2 rounded-lg text-xs font-button">RSVP NOW</button>
+</div>
+</div>
+<div class="absolute left-8 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-secondary z-10"></div>
+<div class="md:w-1/2 pl-16">
+<span class="font-display-lg text-4xl text-primary/30 font-bold">05 SEP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Masonry -->
+<section class="py-xl bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-16">Moments of Excellence</h2>
+<div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+<div class="rounded-xl overflow-hidden shadow-premium group relative">
+<img class="w-full group-hover:scale-105 transition-transform duration-700" data-alt="A grand hallway in a modern court complex, bright lighting, dramatic perspective, minimalist architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1_eZyQr8EfXxXbThklVVsi-ogQb7SoJXelHE7Qfk29Kp828wATpeuLc5wEUjgGg0d1y6GhetLqevX47b1C65A0d7wTvvKLy50jf2mBOXN5VGLtlMhNiffu2MZZdt_mZasdgjana4Xx0eTiXpTZnxuwbsfK4DmGpGCG5lrFn8jove52EllYluYMnClMQ8Xs6eGI7H-6EuJY_aZ7I6W2eOQIK7EInitB3HZhVC25qQkuPodid7pALJE"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<span class="text-white font-label-md">Annual Summit 2023</span>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden shadow-premium group relative">
+<img class="w-full group-hover:scale-105 transition-transform duration-700" data-alt="Legal professionals engaging in a panel discussion, formal stage setting, focused atmosphere, professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1AKJ0W77fJwwCzmWLojhqTkAei7xrtk8t9SfUXzcOuF6EC9dCWbPC9hCmVuBgU3kK--avZ41WoibMZ4jZ_GsUbqnEb80hn6PY60ZlSGrU4gtA5j22fXlEm4biZLbO3HmybSyjSkYt8mnW45p5LS_fFIFZOwGZerE-pmGiQ3Bka80aIfKSuFLTKwiqDPO130QF253XgIfJC6BIATLQNHMogZbzV43f_uEgWdiGALVgpDNGDX42gOix"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-premium group relative">
+<img class="w-full group-hover:scale-105 transition-transform duration-700" data-alt="Candid shot of lawyers in conversation during a networking break, high-end hotel lobby, elegant business attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhRJzTpXcZwm5pw8QHABOz1qasTTYmHwbIFj_FlJn_vDJ4uNPtr74hzjAaxHEUdCYmB_Y4Ai33-0pAeES0RPNOBCt9UBtTLnRJ_Wc8ZZBKbWAGmc4wloCGaB6sAKVFpmUsPL6EAZy83Q_6nnMFbxJ6J1WuobBqOuBm56I_8f4bGc0Zy9gQfEyvU9Yn8FKaUwqh9pJaLzM1YXpK-L_5FiKowLgvuBDJ8rVXe0msJ_iKKuAgwoZJzzCC"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-premium group relative">
+<img class="w-full group-hover:scale-105 transition-transform duration-700" data-alt="Group photo of newly appointed council board members in front of a colonial-style legal institution facade." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjSyPNYyuRBwCxAC-Ynlz8f_4_CnxvvA75FMSZZ5CPvZJfiSmz_u5VX7YLI-UDnC_P6whMhtEMOfiuREHrZX53p2rZ552OIdDmaObLwcNSJ9p8FN1QRU6J4szWyVFaO5kJOvkAimc4-O7mpvaBsK7P6QyAd_HtkUsiqxWVZOIeMmpxqEhVEX68Mr2Yld-Pi4YAAPKmv2GBrLRjO9Q1wfCb54JPlKyMHkAJ0zA5htMykoW-5r05ktbA"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-premium group relative">
+<img class="w-full group-hover:scale-105 transition-transform duration-700" data-alt="Legal aid distribution ceremony in a rural setting, heartwarming scene of help and gratitude, natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzOdqUbp7oNf7v6-TmxA2jtvAphWsLRJU7Y8rer2eaw9IoTcmv19p7Pm9oeIXJ_pU6CvQJRmvp0WzkjMZzirU16wCVycMIFYqRJihQXoc2kmx1mP4DImhSukMo-6LA6_81YVRDgA7mFTOBVXfm2tpiYg4_yqg1EPbfcktfw8bfYwOdKzk0zxhkWgQNrYOMSmimy08PCuNcGfNkE5LMB1HUyzkx1rMpItb-6rEPoh3h0uKRnTqeLd_z"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-premium group relative">
+<img class="w-full group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of a decorative quill and antique ink pot on a dark wooden desk, symbolizes legal history and tradition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7WYA4penAl3Gctml0u__pruayGgGfcJCXS-aHyxk4Zumd1zZjpKnqMWd9KFNw8jSumSY-LGK9my_dGeyb_wk3SAbM3vr2ejcyEVusF1XbrdyDyKRNbDNPj7n-V6KlUIsu_TgGyJfVNlefOKvdRHqEcHxR5vk_23yyk6oGfURwV2hmQWPZPUw_Z7GJ5yihN6q0jX1vCQuvXrvDGXYTOvqIXmREN2aOS7rzDJ1ny6uCM6SieegYaacX"/>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ & Testimonials -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-xl">
+<!-- FAQ Accordion -->
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<div class="bg-white rounded-xl shadow-sm overflow-hidden border border-surface-variant">
+<button class="w-full p-6 flex items-center justify-between font-label-lg text-primary text-left" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').textContent = this.nextElementSibling.classList.contains('hidden') ? 'add' : 'remove'">
+                            How can I verify my membership status?
+                            <span class="material-symbols-outlined toggle-icon">add</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant text-body-md hidden">
+                            You can verify your status by logging into the member portal with your enrollment number or by contacting the national secretariat directly.
+                        </div>
+</div>
+<div class="bg-white rounded-xl shadow-sm overflow-hidden border border-surface-variant">
+<button class="w-full p-6 flex items-center justify-between font-label-lg text-primary text-left" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').textContent = this.nextElementSibling.classList.contains('hidden') ? 'add' : 'remove'">
+                            Are law students eligible for junior membership?
+                            <span class="material-symbols-outlined toggle-icon">add</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant text-body-md hidden">
+                            Yes, AILC offers a dedicated 'Junior Wing' membership for final year LL.B students at a subsidized annual rate.
+                        </div>
+</div>
+<div class="bg-white rounded-xl shadow-sm overflow-hidden border border-surface-variant">
+<button class="w-full p-6 flex items-center justify-between font-label-lg text-primary text-left" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.toggle-icon').textContent = this.nextElementSibling.classList.contains('hidden') ? 'add' : 'remove'">
+                            How does AILC support pro-bono work?
+                            <span class="material-symbols-outlined toggle-icon">add</span>
+</button>
+<div class="px-6 pb-6 text-on-surface-variant text-body-md hidden">
+                            We provide a centralized platform connecting advocates with marginalized litigants and reimburse basic administrative costs for registered pro-bono cases.
+                        </div>
+</div>
+</div>
+</div>
+<!-- Testimonial Carousel -->
+<div class="flex flex-col justify-center">
+<div class="bg-primary text-white p-12 rounded-3xl relative shadow-2xl overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[120px]">format_quote</span>
+</div>
+<div class="relative z-10">
+<div class="flex gap-1 mb-8">
+<span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-headline-sm text-headline-sm italic mb-8">"The Council has been a pillar of support throughout my legal career. The networking opportunities at the national level are unparalleled in India."</p>
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-secondary-fixed">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional advocate, middle-aged, smiling, high court background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8Zz3RhmOvOOFKToWq1cOqeNFJyuwTwKGDV7qdw0LJPzcRS1ENorOtK72Q6pgtBGzPO3wneoLwmYXHKvk17f0O7nP29ULZZ0cEhta3HvUuWxr2mqCoC8cnEh3JP6UPa6OBBBQtFFlIPVSIMwV6eFLtFnz9BmmeUAveiA3X6BmQDawhfHgeqKVYqprJOu74D0xHKds2IBewOAWAxWFMtqUYS2sICcY2iy9R1QcIlZcnVAGEh8s40Ucr"/>
+</div>
+<div>
+<h4 class="font-label-lg">Adv. Karthik Ramanathan</h4>
+<p class="text-xs opacity-60">Senior Counsel, Madras High Court</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex gap-4 mt-8 justify-end">
+<button class="w-12 h-12 rounded-full border border-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Footer -->
+<section class="py-xl bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Contact Us</h2>
+<p class="text-on-surface-variant text-body-lg mb-12">Have queries regarding membership or council activities? Our national secretariat is here to assist you.</p>
+<div class="space-y-8 mb-12">
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-secondary text-3xl">location_on</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-1">National Secretariat</h4>
+<p class="text-on-surface-variant">A-45, Lawyer's Chambers, High Court Compound, New Delhi - 110001</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-secondary text-3xl">call</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Phone &amp; Fax</h4>
+<p class="text-on-surface-variant">+91 11 2338 XXXX | +91 9810X XXXXX</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="material-symbols-outlined text-secondary text-3xl">mail</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Email</h4>
+<p class="text-on-surface-variant">info@ailcindia.org | membership@ailcindia.org</p>
+</div>
+</div>
+</div>
+<div class="h-64 rounded-2xl overflow-hidden shadow-premium border border-surface-variant grayscale">
+<div class="w-full h-full bg-surface-container flex items-center justify-center" data-location="New Delhi, High Court" style="">
+<span class="material-symbols-outlined text-6xl text-primary/10">map</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-3xl p-10 lg:p-16 border border-surface-variant shadow-premium h-fit">
+<h3 class="font-headline-md text-headline-md text-primary mb-8">Send a Message</h3>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-primary opacity-60">Full Name</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary opacity-60">Email Address</label>
+<input class="w-full bg-white border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary opacity-60">Subject</label>
+<select class="w-full bg-white border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary outline-none transition-all">
+<option>General Inquiry</option>
+<option>Membership Query</option>
+<option>Event Registration</option>
+<option>Legal Aid Request</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary opacity-60">Message</label>
+<textarea class="w-full bg-white border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none" rows="5"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 rounded-lg font-button text-button shadow-xl hover:scale-[1.01] active:scale-[0.98] transition-all">SEND MESSAGE</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary-container full-width text-on-primary dark:text-on-primary-container">
+<div class="max-w-container-max mx-auto px-margin-desktop py-xl grid grid-cols-1 md:grid-cols-5 gap-gutter">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-secondary-fixed mb-6">AILC</div>
+<p class="font-body-md opacity-70 mb-8">Championing justice and constitutional integrity across the Indian Republic since 1994.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary-fixed transition-colors group" href="#">
+<span class="material-symbols-outlined text-white group-hover:text-primary">share</span>
+</a>
+<a class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-secondary-fixed transition-colors group" href="#">
+<span class="material-symbols-outlined text-white group-hover:text-primary">chat</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-6">Council</h4>
+<ul class="space-y-4 font-label-md">
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">About AILC</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">National Executive</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">State Chapters</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">History</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-6">Services</h4>
+<ul class="space-y-4 font-label-md">
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Membership</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Advocate Welfare</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Legal Aid</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Training Portal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-6">Resources</h4>
+<ul class="space-y-4 font-label-md">
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Journals</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Legal News</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Supreme Court Updates</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Downloads</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-6">International</h4>
+<ul class="space-y-4 font-label-md">
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Partnerships</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Global Affiliates</a></li>
+<li><a class="text-surface-variant opacity-70 hover:opacity-100 transition-opacity hover:text-secondary-fixed" href="#">Foreign Bar Relations</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/5 py-8">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-md text-surface-variant opacity-70">© 2024 All India Lawyers Council. All rights reserved.</p>
+<div class="flex gap-8 font-label-md">
+<a class="text-surface-variant opacity-70 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-surface-variant opacity-70 hover:opacity-100" href="#">Terms of Use</a>
+<a class="text-surface-variant opacity-70 hover:opacity-100" href="#">Cookie Settings</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple marquee behavior and accordion micro-interactions handled inline
+        // Marquee animation keyframe
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body></html>
