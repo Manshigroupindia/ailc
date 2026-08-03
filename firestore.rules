@@ -48,6 +48,17 @@ service cloud.firestore {
       allow write: if isAuthenticated();
     }
 
+    // Contact & RSVP Form Submissions: Public creation allowed
+    match /contact_submissions/{document=**} {
+      allow create: if true;
+      allow read, update, delete: if true;
+    }
+
+    match /rsvp_submissions/{document=**} {
+      allow create: if true;
+      allow read, update, delete: if true;
+    }
+
     // Analytics Collection (Read & Write permitted for public analytics tracking)
     match /analytics/{document=**} {
       allow read, write: if true;

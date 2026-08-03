@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
+import { db, collection, addDoc, serverTimestamp } from '@/services/firebase';
+import { SubmissionSuccessModal } from '@/components/ui/SubmissionSuccessModal';
+import { SubmissionErrorModal } from '@/components/ui/SubmissionErrorModal';
+import { getRandomConstitutionQuote } from '@/data/constitutionQuotes';
 
 export const ContactForm = () => {
   const {
@@ -12,47 +16,43 @@ export const ContactForm = () => {
     mode: 'onTouched',
   });
 
-  const [submitted, setSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [currentQuote, setCurrentQuote] = useState(null);
 
   const onSubmit = async (data) => {
-    setSubmitError(false);
     try {
-      // Simulate backend API submission delay
-      await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve({ status: 'success' });
-        }, 1000);
-      });
-      setSubmitted(true);
+      const submissionPayload = {
+        name: (data.fullName || '').trim(),
+        email: (data.email || '').trim(),
+        subject: (data.subject || '').trim(),
+        message: (data.message || '').trim(),
+        submittedAt: serverTimestamp(),
+        status: 'New',
+        isStarred: false,
+        notes: '',
+      };
+
+      await addDoc(collection(db, 'contact_submissions'), submissionPayload);
+
+      // Select random quote for Thank You modal
+      setCurrentQuote(getRandomConstitutionQuote());
+      setShowSuccessModal(true);
       reset();
-      setTimeout(() => setSubmitted(false), 6000);
     } catch (err) {
-      setSubmitError(true);
+      console.error('Contact Form Firestore error:', err);
+      setErrorMessage(err.message || 'Something went wrong while sending your message. Please try again after a few moments.');
+      setShowErrorModal(true);
     }
   };
 
   return (
-    <div className="bg-surface-container rounded-3xl p-5 sm:p-8 lg:p-12 border border-surface-variant shadow-premium h-fit">
-      <h3 className="font-display font-bold text-xl sm:text-2xl text-primary mb-6">Send a Message</h3>
+    <>
+      <div className="bg-surface-container rounded-3xl p-5 sm:p-8 lg:p-12 border border-surface-variant shadow-premium h-fit font-body">
+        <h3 className="font-display font-bold text-xl sm:text-2xl text-primary mb-6">Send a Message</h3>
 
-      {submitted ? (
-        <div className="bg-emerald-50 border border-emerald-200 text-emerald-900 p-6 rounded-2xl text-center space-y-3">
-          <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
-          <h4 className="font-display text-lg font-bold">Message Sent Successfully!</h4>
-          <p className="text-xs sm:text-sm text-emerald-800 leading-relaxed">
-            Thank you for contacting the All India Lawyers Council. Our secretariat team will review your message and get back to you shortly.
-          </p>
-        </div>
-      ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
-          {submitError && (
-            <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-xs flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 flex-shrink-0" />
-              <span>Failed to send message. Please try again or contact us via email.</span>
-            </div>
-          )}
-
           {/* 1. Full Name */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-primary uppercase tracking-wider block">
@@ -153,8 +153,22 @@ export const ContactForm = () => {
             )}
           </button>
         </form>
-      )}
-    </div>
+      </div>
+
+      {/* Thank You Success Modal with Random Quote */}
+      <SubmissionSuccessModal
+        isOpen={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
+        quote={currentQuote}
+      />
+
+      {/* Submission Error Modal */}
+      <SubmissionErrorModal
+        isOpen={showErrorModal}
+        onClose={() => setShowErrorModal(false)}
+        errorMessage={errorMessage}
+      />
+    </>
   );
 };
 

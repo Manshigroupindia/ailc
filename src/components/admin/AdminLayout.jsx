@@ -36,6 +36,7 @@ export const AdminLayout = () => {
 
   const navItems = [
     { label: 'Dashboard Overview', path: '/admin/dashboard', icon: LayoutDashboard },
+    { label: 'Messages & Inquiries', path: '/admin/messages', icon: Mail },
     { label: 'People Management', path: '/admin/people', icon: UserCheck },
     { label: 'Home Page Editor', path: '/admin/pages/home', icon: Home },
     { label: 'Contact & Social Details', path: '/admin/contact', icon: PhoneCall },

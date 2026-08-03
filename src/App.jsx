@@ -40,6 +40,7 @@ import { AdminLogin } from '@/pages/admin/AdminLogin';
 import { ProtectedRoute } from '@/components/admin/ProtectedRoute';
 import { AdminLayout } from '@/components/admin/AdminLayout';
 import { AdminDashboard } from '@/pages/admin/AdminDashboard';
+import { AdminMessages } from '@/pages/admin/AdminMessages';
 import { AdminPeople } from '@/pages/admin/AdminPeople';
 import { AdminContact } from '@/pages/admin/AdminContact';
 import { AdminBranding } from '@/pages/admin/AdminBranding';
@@ -127,6 +128,7 @@ export default function App() {
               <Route element={<ProtectedRoute />}>
                 <Route element={<AdminLayout />}>
                   <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                  <Route path="/admin/messages" element={<AdminMessages />} />
                   <Route path="/admin/people" element={<AdminPeople />} />
                   <Route path="/admin/pages/home" element={<AdminHomePage />} />
                   <Route path="/admin/contact" element={<AdminContact />} />
