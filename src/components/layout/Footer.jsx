@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Scale, Facebook, Instagram, Twitter, ShieldCheck, 
 import { useCmsData } from '@/context/CmsContext';
 
 export const Footer = () => {
-  const { contact, branding } = useCmsData();
+  const { contact, branding, navigation } = useCmsData();
 
   const quickLinks = [
     { name: 'About Us', href: '/about' },
@@ -159,18 +159,25 @@ export const Footer = () => {
       <div className="border-t border-white/10 pt-8">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center text-[11px] text-white/60 space-y-2">
           <p>
-            Copyright © 2023–2024 All India Lawyers Council. All Rights Reserved.
+            {navigation?.copyrightNotice?.includes('|')
+              ? navigation.copyrightNotice.split('|')[0].trim()
+              : (navigation?.copyrightNotice || 'Copyright © 2023–2024 All India Lawyers Council. All Rights Reserved.')}
           </p>
           <p>
-            Design by{' '}
-            <a
-              href="https://manshigroup.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#ffe08d] font-semibold hover:underline"
-            >
-              Manshi Group India
-            </a>
+            {navigation?.designerUrl ? (
+              <a
+                href={navigation.designerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#ffe08d] font-semibold hover:underline"
+              >
+                {navigation?.designerText || 'Design by Manshi Group of Services'}
+              </a>
+            ) : (
+              <span className="text-[#ffe08d] font-semibold">
+                {navigation?.designerText || 'Design by Manshi Group of Services'}
+              </span>
+            )}
           </p>
         </div>
       </div>

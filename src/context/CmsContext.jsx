@@ -363,7 +363,9 @@ const defaultAboutPage = {
 
 const defaultNavigation = {
   footerDescription: 'The Retired Judges, Former Bureaucrats, Ex Police Officers, Prominent Intellectuals, Academicians, Noted Social and Political Activists of India have also been subscribing and patronising. AILC is an autonomous, self-help and Pan India Organisation of lawyers.',
-  copyrightNotice: 'Copyright © 2023 All India Lawyers Council | Designed by Manshi Group of Services',
+  copyrightNotice: 'Copyright © 2023–2024 All India Lawyers Council. All Rights Reserved.',
+  designerText: 'Design by Manshi Group of Services',
+  designerUrl: 'https://manshigroup.in',
 };
 
 export const CmsProvider = ({ children }) => {

@@ -1,13 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCmsData } from '@/context/CmsContext';
-import { Layout, Save, CheckCircle2, Loader2 } from 'lucide-react';
+import { Layout, Save, CheckCircle2, Loader2, ExternalLink } from 'lucide-react';
 
 export const AdminNavigation = () => {
   const { navigation, updateNavigationData } = useCmsData();
 
-  const [formData, setFormData] = useState(navigation);
+  const [formData, setFormData] = useState({
+    footerDescription: '',
+    copyrightNotice: 'Copyright © 2023–2024 All India Lawyers Council. All Rights Reserved.',
+    designerText: 'Design by Manshi Group of Services',
+    designerUrl: 'https://manshigroup.in',
+  });
   const [isSaving, setIsSaving] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
+
+  useEffect(() => {
+    if (navigation) {
+      setFormData({
+        footerDescription: navigation.footerDescription || '',
+        copyrightNotice: navigation.copyrightNotice?.includes('|')
+          ? navigation.copyrightNotice.split('|')[0].trim()
+          : (navigation.copyrightNotice || 'Copyright © 2023–2024 All India Lawyers Council. All Rights Reserved.'),
+        designerText: navigation.designerText || 'Design by Manshi Group of Services',
+        designerUrl: navigation.designerUrl || 'https://manshigroup.in',
+      });
+    }
+  }, [navigation]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -80,9 +98,37 @@ export const AdminNavigation = () => {
               name="copyrightNotice"
               value={formData.copyrightNotice || ''}
               onChange={handleChange}
-              placeholder="Copyright © 2023 All India Lawyers Council | Designed by Manshi Group of Services"
+              placeholder="Copyright © 2023–2024 All India Lawyers Council. All Rights Reserved."
               className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-[#ffe08d]"
             />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <div className="space-y-1">
+              <label className="text-xs font-bold text-white/70 block">Designer / Credit Text</label>
+              <input
+                type="text"
+                name="designerText"
+                value={formData.designerText || ''}
+                onChange={handleChange}
+                placeholder="Design by Manshi Group of Services"
+                className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-[#ffe08d]"
+              />
+            </div>
+
+            <div className="space-y-1">
+              <label className="text-xs font-bold text-white/70 block flex items-center gap-1.5">
+                Designer Redirect Link (URL) <ExternalLink className="w-3 h-3 text-[#ffe08d]" />
+              </label>
+              <input
+                type="url"
+                name="designerUrl"
+                value={formData.designerUrl || ''}
+                onChange={handleChange}
+                placeholder="https://manshigroup.in"
+                className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-xs text-white outline-none focus:border-[#ffe08d]"
+              />
+            </div>
           </div>
         </div>
 
