@@ -17,32 +17,32 @@ export const Navbar = ({ onOpenMenu }) => {
   return (
     <>
       <nav className="bg-white sticky top-0 z-40 shadow-sm border-b border-surface-variant font-body backdrop-blur-md bg-white/95">
-        <div className="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-[88px]">
-          {/* Brand Logo & Organization Title - Vertically Centered */}
-          <Link to="/" className="flex items-center gap-3.5 group focus:outline-none py-2">
+        <div className="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+          {/* Brand Logo & Organization Title - Compact Two-Line Stacked Format */}
+          <Link to="/" className="flex items-center gap-3 group focus:outline-none shrink-0 py-2 mr-4 xl:mr-8">
             {branding?.logoUrl ? (
               <img
                 src={branding.logoUrl}
                 alt={branding.organizationTitle || "AILC"}
-                className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
               />
             ) : (
               <div className="w-10 h-10 rounded-xl bg-[#000d25] flex items-center justify-center text-[#ffe08d] shadow-sm flex-shrink-0 group-hover:bg-secondary group-hover:text-[#000d25] transition-colors">
                 <Scale className="w-5 h-5" />
               </div>
             )}
-            <div className="flex flex-col justify-center">
-              <span className="font-display font-bold text-sm sm:text-base md:text-lg text-[#000d25] tracking-tight uppercase leading-none">
-                {branding?.organizationTitle || "ALL INDIA LAWYERS COUNCIL"}
+            <div className="flex flex-col justify-center leading-tight">
+              <span className="font-display font-bold text-xs sm:text-sm md:text-base text-[#000d25] tracking-tight uppercase">
+                ALL INDIA LAWYERS
               </span>
-              <span className="text-[10px] sm:text-[11px] text-secondary font-semibold uppercase tracking-widest leading-none mt-1.5">
-                Autonomous Legal Federation
+              <span className="font-display font-bold text-xs sm:text-sm md:text-base text-[#000d25] tracking-tight uppercase">
+                COUNCIL
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav Links - Restored Layout, Vertical Centering & Professional Spacing */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-7 h-full">
+          {/* Desktop Nav Links - Uniform Professional Sizing & Clean Spacing */}
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2.5 h-full">
             {desktopLinks.map((link) => {
               const isActive =
                 location.pathname === link.path ||
@@ -58,15 +58,15 @@ export const Navbar = ({ onOpenMenu }) => {
                   >
                     <Link
                       to={link.path}
-                      className={`flex items-center gap-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors py-2 ${
+                      className={`relative inline-flex items-center gap-1 px-2.5 xl:px-3 py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap ${
                         isActive
-                          ? 'text-[#000d25] font-bold border-b-2 border-[#000d25]'
-                          : 'text-on-surface-variant hover:text-[#000d25]'
+                          ? 'text-[#000d25] bg-[#000d25]/10 font-bold'
+                          : 'text-[#000d25]/75 hover:text-[#000d25] hover:bg-[#000d25]/5'
                       }`}
                     >
                       <span>{link.name}</span>
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${
+                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
                           aboutDropdownOpen ? 'rotate-180 text-secondary' : 'text-outline'
                         }`}
                       />
@@ -80,7 +80,7 @@ export const Navbar = ({ onOpenMenu }) => {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 6, scale: 0.98 }}
                           transition={{ duration: 0.15, ease: 'easeOut' }}
-                          className="absolute left-0 top-[80%] bg-white rounded-2xl shadow-2xl border border-surface-variant py-2 w-56 z-50 overflow-hidden"
+                          className="absolute left-0 top-[75%] bg-white rounded-2xl shadow-2xl border border-surface-variant py-2 w-56 z-50 overflow-hidden"
                         >
                           {link.children.map((child) => (
                             <Link
@@ -103,10 +103,10 @@ export const Navbar = ({ onOpenMenu }) => {
                 <div key={link.name} className="flex items-center h-full">
                   <Link
                     to={link.path}
-                    className={`text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors py-2 ${
+                    className={`relative inline-flex items-center px-2.5 xl:px-3 py-1.5 rounded-lg text-[11px] xl:text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap ${
                       isActive
-                        ? 'text-[#000d25] font-bold border-b-2 border-[#000d25]'
-                        : 'text-on-surface-variant hover:text-[#000d25]'
+                        ? 'text-[#000d25] bg-[#000d25]/10 font-bold'
+                        : 'text-[#000d25]/75 hover:text-[#000d25] hover:bg-[#000d25]/5'
                     }`}
                   >
                     {link.name}
