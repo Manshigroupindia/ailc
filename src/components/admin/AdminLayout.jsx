@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAdminAuth } from '@/context/AdminAuthContext';
 import {
   LayoutDashboard,
+  Mail,
   PhoneCall,
   Image as ImageIcon,
   Globe,

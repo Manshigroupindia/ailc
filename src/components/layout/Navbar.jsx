@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Scale, ChevronDown } from 'lucide-react';
+import { Search, Scale, ChevronDown, Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useModal } from '@/context/ModalContext';
 import { useCmsData } from '@/context/CmsContext';
 import { SearchModal } from '@/components/ui/SearchModal';
 import { primaryNavigation } from '@/data/navigationData';
 
 export const Navbar = ({ onOpenMenu }) => {
   const location = useLocation();
-  const { openModal } = useModal();
   const { branding } = useCmsData();
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -18,64 +16,80 @@ export const Navbar = ({ onOpenMenu }) => {
 
   return (
     <>
-      <nav className="bg-white sticky top-0 z-40 shadow-sm border-b border-surface-variant font-body">
-        <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop flex justify-between items-center h-16 md:h-20">
-          {/* Brand Logo & Website Name */}
-          <Link to="/" className="flex items-center gap-2.5 font-display text-primary">
+      <nav className="bg-white sticky top-0 z-40 shadow-sm border-b border-surface-variant font-body backdrop-blur-md bg-white/95">
+        <div className="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-[88px]">
+          {/* Brand Logo & Organization Title - Vertically Centered */}
+          <Link to="/" className="flex items-center gap-3.5 group focus:outline-none py-2">
             {branding?.logoUrl ? (
-              <img src={branding.logoUrl} alt={branding.organizationTitle || "AILC"} className="h-9 w-auto object-contain" />
+              <img
+                src={branding.logoUrl}
+                alt={branding.organizationTitle || "AILC"}
+                className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+              />
             ) : (
-              <div className="w-8 h-8 rounded-lg bg-[#000d25] flex items-center justify-center text-[#ffe08d] flex-shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#000d25] flex items-center justify-center text-[#ffe08d] shadow-sm flex-shrink-0 group-hover:bg-secondary group-hover:text-[#000d25] transition-colors">
                 <Scale className="w-5 h-5" />
               </div>
             )}
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-xs sm:text-sm md:text-lg text-[#000d25] tracking-tight uppercase">
+            <div className="flex flex-col justify-center">
+              <span className="font-display font-bold text-sm sm:text-base md:text-lg text-[#000d25] tracking-tight uppercase leading-none">
                 {branding?.organizationTitle || "ALL INDIA LAWYERS COUNCIL"}
+              </span>
+              <span className="text-[10px] sm:text-[11px] text-secondary font-semibold uppercase tracking-widest leading-none mt-1.5">
+                Autonomous Legal Federation
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+          {/* Desktop Nav Links - Restored Layout, Vertical Centering & Professional Spacing */}
+          <div className="hidden lg:flex items-center gap-5 xl:gap-7 h-full">
             {desktopLinks.map((link) => {
-              const isActive = location.pathname === link.path || (link.children && link.children.some(child => location.pathname === child.path));
+              const isActive =
+                location.pathname === link.path ||
+                (link.children && link.children.some((child) => location.pathname === child.path));
 
               if (link.hasDropdown || link.hasChildren) {
                 return (
                   <div
                     key={link.name}
-                    className="relative"
+                    className="relative flex items-center h-full"
                     onMouseEnter={() => setAboutDropdownOpen(true)}
                     onMouseLeave={() => setAboutDropdownOpen(false)}
                   >
                     <Link
                       to={link.path}
-                      className={`flex items-center gap-1 text-xs font-semibold py-2 transition-colors ${
-                        isActive ? 'text-primary font-bold border-b-2 border-primary' : 'text-on-surface-variant hover:text-primary'
+                      className={`flex items-center gap-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors py-2 ${
+                        isActive
+                          ? 'text-[#000d25] font-bold border-b-2 border-[#000d25]'
+                          : 'text-on-surface-variant hover:text-[#000d25]'
                       }`}
                     >
-                      {link.name}
-                      <ChevronDown className={`w-3.5 h-3.5 transition-transform ${aboutDropdownOpen ? 'rotate-180 text-primary' : 'text-outline'}`} />
+                      <span>{link.name}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          aboutDropdownOpen ? 'rotate-180 text-secondary' : 'text-outline'
+                        }`}
+                      />
                     </Link>
 
-                    {/* Dropdown Menu */}
+                    {/* Smooth Dropdown Menu */}
                     <AnimatePresence>
                       {aboutDropdownOpen && (
                         <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute left-0 top-full bg-white rounded-xl shadow-xl border border-surface-variant py-2 w-52 z-50"
+                          initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                          transition={{ duration: 0.15, ease: 'easeOut' }}
+                          className="absolute left-0 top-[80%] bg-white rounded-2xl shadow-2xl border border-surface-variant py-2 w-56 z-50 overflow-hidden"
                         >
                           {link.children.map((child) => (
                             <Link
                               key={child.name}
                               to={child.path}
-                              className="block px-4 py-2.5 text-xs font-semibold text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors"
+                              className="flex items-center justify-between px-4 py-2.5 text-xs font-semibold text-on-surface-variant hover:bg-surface-container-low hover:text-[#000d25] transition-colors"
                             >
-                              {child.name}
+                              <span>{child.name}</span>
+                              <span className="text-[10px] text-outline">→</span>
                             </Link>
                           ))}
                         </motion.div>
@@ -86,46 +100,57 @@ export const Navbar = ({ onOpenMenu }) => {
               }
 
               return (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={
-                    isActive
-                      ? 'text-primary font-bold border-b-2 border-primary pb-1 text-xs font-semibold'
-                      : 'text-on-surface-variant hover:text-primary transition-colors text-xs font-semibold'
-                  }
-                >
-                  {link.name}
-                </Link>
+                <div key={link.name} className="flex items-center h-full">
+                  <Link
+                    to={link.path}
+                    className={`text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors py-2 ${
+                      isActive
+                        ? 'text-[#000d25] font-bold border-b-2 border-[#000d25]'
+                        : 'text-on-surface-variant hover:text-[#000d25]'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </div>
               );
             })}
           </div>
 
-          {/* Desktop Actions (Search Icon Only) */}
-          <div className="hidden lg:flex items-center">
+          {/* Desktop Search Button - Vertically Centered */}
+          <div className="hidden lg:flex items-center h-full">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-primary hover:bg-surface-container rounded-full transition-colors active:scale-95"
-              aria-label="Search"
+              className="p-2.5 text-[#000d25] hover:bg-surface-container rounded-full transition-all active:scale-95 border border-transparent hover:border-surface-variant"
+              aria-label="Search website"
+              title="Search website"
             >
-              <Search className="w-5 h-5 text-primary" />
+              <Search className="w-5 h-5 text-[#000d25]" />
             </button>
           </div>
 
-          {/* Mobile Search Icon ONLY */}
-          <div className="flex lg:hidden items-center">
+          {/* Mobile Actions - Untouched */}
+          <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-primary hover:bg-surface-container rounded-full transition-colors active:scale-95"
+              className="p-2 text-[#000d25] hover:bg-surface-container rounded-full transition-colors active:scale-95"
               aria-label="Search"
             >
-              <Search className="w-5 h-5 text-primary" />
+              <Search className="w-5 h-5 text-[#000d25]" />
             </button>
+            {onOpenMenu && (
+              <button
+                onClick={onOpenMenu}
+                className="p-2 text-[#000d25] hover:bg-surface-container rounded-lg transition-colors"
+                aria-label="Open mobile menu"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
+            )}
           </div>
         </div>
       </nav>
 
-      {/* Global Interactive Search Modal */}
+      {/* Global Search Modal */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );

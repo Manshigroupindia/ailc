@@ -145,7 +145,7 @@ export const buildSearchIndex = (cmsData = {}) => {
       category: 'Service',
       path: '/membership',
       description: 'Online membership portal for practicing advocates enrolled in any State Bar Council in India.',
-      keywords: 'membership apply enrollment state bar council practicing advocate join membership fee',
+      keywords: 'membership apply enrollment state bar council practicing advocate join application',
       content: 'Apply for AILC membership. Open to all practicing advocates in India with valid Bar Council enrollment number.',
     },
     {

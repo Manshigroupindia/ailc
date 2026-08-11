@@ -60,7 +60,7 @@ export const LaunchingSession = () => {
             </div>
           </div>
           <button className="w-full bg-[#000d25] text-white py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider mt-4">
-            SUBMIT APPLICATION (₹1500/yr)
+            SUBMIT APPLICATION
           </button>
         </div>
       ),

@@ -80,7 +80,7 @@ export const RulesRegulation = () => {
             </div>
           </div>
           <button className="w-full bg-[#000d25] text-white py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider mt-4">
-            SUBMIT APPLICATION (₹1500/yr)
+            SUBMIT APPLICATION
           </button>
         </div>
       ),
@@ -214,7 +214,7 @@ export const RulesRegulation = () => {
         <div className="space-y-4 text-sm sm:text-base text-on-surface-variant leading-relaxed">
           <p>The funds and finances of the Council shall be derived from:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>Annual Membership Admission and Subscription Fees.</li>
+            <li>Voluntary advocate contributions and statutory organizational support.</li>
             <li>Voluntary donations from legal patrons and advocates.</li>
             <li>Publication revenues, convention delegate registrations, and legal awareness grants.</li>
           </ul>

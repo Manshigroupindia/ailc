@@ -198,7 +198,7 @@ export const membershipBenefitsData = [
     id: 3,
     icon: "Calendar",
     title: "Welfare & Insurance",
-    description: "Financial support under Advocate Welfare and subsidized conference fees."
+    description: "Financial support under Advocate Welfare and priority access to national conventions."
   }
 ];
 
@@ -238,7 +238,7 @@ export const faqData = [
   {
     id: 2,
     question: "Are law students eligible for junior membership?",
-    answer: "Yes, AILC offers a dedicated 'Junior Wing' membership for final year LL.B students at a subsidized annual rate."
+    answer: "Yes, AILC offers a dedicated 'Junior Wing' membership for final year LL.B students."
   },
   {
     id: 3,
